@@ -3,220 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umar Saeed — AI Researcher & Computer Science Scholar</title>
-    <!-- Google Fonts & FontAwesome Icons -->
+    <title>Umar Saeed — AI Researcher & CS Scholar</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --accent-color: #38bdf8;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding-bottom: 60px;
-        }
-
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 10%;
-            background-color: rgba(15, 23, 42, 0.9);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--accent-color);
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Hero Header */
-        .hero {
-            padding: 80px 10% 40px;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 span {
-            color: var(--accent-color);
-        }
-
-        .hero .subtitle {
-            color: var(--accent-color);
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 30px;
-        }
-
-        .social-buttons a {
-            display: inline-block;
-            color: var(--text-main);
-            background-color: var(--card-bg);
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            margin: 0 5px 10px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .social-buttons a:hover {
-            border-color: var(--accent-color);
-            color: var(--accent-color);
-            transform: translateY(-2px);
-        }
-
-        /* Container & Sections */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 1.6rem;
-            margin-bottom: 25px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 8px;
-            display: inline-block;
-            color: var(--text-main);
-        }
-
-        /* Generic Card Styling */
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 25px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 20px;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .card:hover {
-            border-color: var(--accent-color);
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 5px;
-        }
-
-        .card .meta {
-            color: var(--accent-color);
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 12px;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Projects Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 20px;
-        }
-
-        .tags {
-            margin: 15px 0;
-        }
-
-        .tag {
-            display: inline-block;
-            background-color: rgba(56, 189, 248, 0.1);
-            color: var(--accent-color);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-right: 5px;
-            margin-bottom: 5px;
-        }
-
-        .card-link {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        /* Skills Pill Layout */
-        .skills-group {
-            margin-bottom: 20px;
-        }
-
-        .skills-group h4 {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            color: var(--text-main);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border-color);
-            margin-top: 50px;
-        }
+        :root { --bg-color: #0f172a; --card-bg: #1e293b; --accent-color: #38bdf8; --text-main: #f8fafc; --text-muted: #94a3b8; --border-color: #334155; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding-bottom: 60px; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background-color: rgba(15, 23, 42, 0.9); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); }
+        .logo { font-size: 1.2rem; font-weight: 700; color: var(--accent-color); }
+        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 20px; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent-color); }
+        .hero { padding: 80px 10% 40px; text-align: center; max-width: 900px; margin: 0 auto; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 15px; }
+        .hero h1 span { color: var(--accent-color); }
+        .hero .subtitle { color: var(--accent-color); font-size: 1.2rem; font-weight: 600; margin-bottom: 15px; }
+        .hero p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 30px; }
+        .social-buttons a { display: inline-block; color: var(--text-main); background-color: var(--card-bg); padding: 10px 20px; border-radius: 8px; text-decoration: none; margin: 0 5px 10px; border: 1px solid var(--border-color); transition: all 0.3s ease; }
+        .social-buttons a:hover { border-color: var(--accent-color); color: var(--accent-color); transform: translateY(-2px); }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        section { margin-bottom: 60px; }
+        .section-title { font-size: 1.6rem; margin-bottom: 25px; border-bottom: 2px solid var(--border-color); padding-bottom: 8px; display: inline-block; color: var(--text-main); }
+        .card { background-color: var(--card-bg); border-radius: 12px; padding: 25px; border: 1px solid var(--border-color); margin-bottom: 20px; transition: transform 0.3s, border-color 0.3s; }
+        .card:hover { border-color: var(--accent-color); }
+        .card h3 { font-size: 1.25rem; margin-bottom: 5px; }
+        .card .meta { color: var(--accent-color); font-size: 0.9rem; font-weight: 500; margin-bottom: 12px; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+        .tags { margin: 15px 0; }
+        .tag { display: inline-block; background-color: rgba(56, 189, 248, 0.1); color: var(--accent-color); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; margin-right: 5px; margin-bottom: 5px; }
+        .card-link { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .skills-group { margin-bottom: 20px; }
+        .skills-group h4 { font-size: 1rem; margin-bottom: 10px; color: var(--text-main); }
+        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border-color); margin-top: 50px; }
     </style>
 </head>
 <body>
-
-    <!-- Navigation -->
     <nav>
         <div class="logo">Umar Saeed</div>
         <div class="nav-links">
@@ -229,16 +51,10 @@
         </div>
     </nav>
 
-    <!-- Hero Header -->
     <header class="hero" id="about">
         <h1>Hi, I'm <span>Umar Saeed</span> 👋</h1>
         <div class="subtitle">AI Researcher & Computer Science Scholar</div>
-        <p>
-            Computer Science scholar and AI Researcher based in Islamabad, Pakistan. 
-            I specialize in real-time computer vision, deep learning object detection (YOLOv8/v11/v12), 
-            and building digital twin frameworks for autonomous safety & surveillance pipelines.
-        </p>
-        
+        <p>Computer Science scholar and AI Researcher based in Islamabad, Pakistan. I specialize in real-time computer vision, deep learning object detection (YOLOv8/v11/v12), and building digital twin frameworks for autonomous safety & surveillance pipelines.</p>
         <div class="social-buttons">
             <a href="https://github.com/UmarSaeedTech" target="_blank"><i class="fab fa-github"></i> GitHub</a>
             <a href="https://linkedin.com/in/umar-saeed-502695324/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
@@ -247,52 +63,37 @@
     </header>
 
     <div class="container">
-
-        <!-- Projects Section -->
         <section id="projects">
             <h2 class="section-title">Featured Projects</h2>
             <div class="grid">
-                
-                <!-- BloodLink Card -->
                 <div class="card">
                     <h3>BloodLink Framework</h3>
                     <div class="meta">Generative AI & Cloud-Enabled Donor Matching</div>
                     <p>Architected an end-to-end blood donation matching framework featuring an interactive web prototype, real-time request-response flows, and cloud-backed architectural specifications.</p>
                     <div class="tags">
-                        <span class="tag">System Design</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Cloud Architecture</span>
+                        <span class="tag">System Design</span><span class="tag">JavaScript</span><span class="tag">Cloud Architecture</span>
                     </div>
                     <a href="https://github.com/UmarSaeedTech/BloodLink" target="_blank" class="card-link">View Repository &rarr;</a>
                 </div>
-
-                <!-- Computer Vision Card -->
                 <div class="card">
                     <h3>'Smart Eye' Threat Detection Pipeline</h3>
                     <div class="meta">Deep Learning & Object Detection</div>
                     <p>Engineered production-grade surveillance models utilizing custom-trained YOLOv8/v11/v12 architectures for real-time threat identification (firearms, hammers, rods) and PPE compliance.</p>
                     <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">YOLOv8/v11/v12</span>
-                        <span class="tag">OpenCV</span>
-                        <span class="tag">PyTorch</span>
+                        <span class="tag">Python</span><span class="tag">YOLOv8/v11/v12</span><span class="tag">OpenCV</span><span class="tag">PyTorch</span>
                     </div>
                     <a href="https://github.com/UmarSaeedTech" target="_blank" class="card-link">Explore Code &rarr;</a>
                 </div>
-
             </div>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience">
             <h2 class="section-title">Experience & Research</h2>
-            
             <div class="card">
                 <h3>Research Student</h3>
                 <div class="meta">National Center of Artificial Intelligence (NCAI) | NUST | Dec 2025 – Apr 2026</div>
                 <p>Served as Lead Developer for the 'Smart Eye' project. Engineered real-time multi-class threat detection systems (firearms, rods, hammers) and PPE/helmet compliance modules using YOLO variants and OpenCV.</p>
             </div>
-
             <div class="card">
                 <h3>AI Research Intern</h3>
                 <div class="meta">National Center of Artificial Intelligence (NCAI) | NUST | Jul 2025 – Dec 2025</div>
@@ -300,36 +101,24 @@
             </div>
         </section>
 
-        <!-- Technical Skills Section -->
         <section id="skills">
             <h2 class="section-title">Technical Skills</h2>
             <div class="card">
                 <div class="skills-group">
                     <h4>Artificial Intelligence & Computer Vision:</h4>
                     <div class="tags">
-                        <span class="tag">YOLOv8 / v11 / v12</span>
-                        <span class="tag">PyTorch</span>
-                        <span class="tag">OpenCV</span>
-                        <span class="tag">Object Tracking</span>
-                        <span class="tag">PPE Compliance</span>
-                        <span class="tag">ANPR & Facial Recognition</span>
+                        <span class="tag">YOLOv8 / v11 / v12</span><span class="tag">PyTorch</span><span class="tag">OpenCV</span><span class="tag">Object Tracking</span><span class="tag">PPE Compliance</span><span class="tag">ANPR & Facial Recognition</span>
                     </div>
                 </div>
                 <div class="skills-group">
                     <h4>Languages, Tools & Environment:</h4>
                     <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">C++</span>
-                        <span class="tag">Git & GitHub</span>
-                        <span class="tag">macOS (Apple Silicon M3)</span>
-                        <span class="tag">Ubuntu Linux</span>
-                        <span class="tag">VS Code</span>
+                        <span class="tag">Python</span><span class="tag">C++</span><span class="tag">Git & GitHub</span><span class="tag">macOS (Apple Silicon M3)</span><span class="tag">Ubuntu Linux</span><span class="tag">VS Code</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Education Section -->
         <section id="education">
             <h2 class="section-title">Education</h2>
             <div class="card">
@@ -339,16 +128,13 @@
             </div>
         </section>
 
-        <!-- Certifications Section -->
         <section id="certifications">
             <h2 class="section-title">Certifications & Workshops</h2>
-            
             <div class="card">
                 <h3>Impacts of Artificial Intelligence Certification</h3>
                 <div class="meta">Lincoln Corner Islamabad / U.S. Embassy Partner Program | July 2026</div>
                 <p>Awarded by Regional Engagement Specialist Donna Wiese for exploring AI development, ethical implications, and practical deployments.</p>
             </div>
-
             <div class="card">
                 <h3>Digital Citizenship & Media Literacy Workshop</h3>
                 <div class="meta">American Center & National Library of Pakistan / U.S. Embassy | September 2022</div>
@@ -356,22 +142,17 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" style="text-align: center;">
             <h2 class="section-title">Get In Touch</h2>
-            <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 20px;">
-                Open to discussions regarding AI research collaborations, computer vision systems, or engineering roles.
-            </p>
+            <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 20px;">Open to discussions regarding AI research collaborations, computer vision systems, or engineering roles.</p>
             <div class="social-buttons">
                 <a href="mailto:umarsaeed.csai@gmail.com"><i class="fas fa-paper-plane"></i> Send Email</a>
             </div>
         </section>
-
     </div>
 
     <footer>
         <p>&copy; 2026 Umar Saeed. Built & Hosted on GitHub Pages.</p>
     </footer>
-
 </body>
 </html>
