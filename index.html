@@ -7,39 +7,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --bg-color: #0f172a; --card-bg: #1e293b; --accent-color: #38bdf8; --text-main: #f8fafc; --text-muted: #94a3b8; --border-color: #334155; }
+        :root { --bg-color: #0b1120; --card-bg: rgba(30, 41, 59, 0.85); --accent-color: #38bdf8; --text-main: #f8fafc; --text-muted: #94a3b8; --border-color: #334155; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding-bottom: 60px; }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background-color: rgba(15, 23, 42, 0.9); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding-bottom: 60px; overflow-x: hidden; position: relative; }
+        
+        /* Interactive Tech Canvas Background */
+        #tech-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; }
+        
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background-color: rgba(11, 17, 32, 0.85); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); }
         .logo { font-size: 1.2rem; font-weight: 700; color: var(--accent-color); }
         .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 20px; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: var(--accent-color); }
-        .hero { padding: 80px 10% 40px; text-align: center; max-width: 900px; margin: 0 auto; }
-        .profile-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-color); margin-bottom: 20px; box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2); }
+        
+        .hero { padding: 80px 10% 40px; text-align: center; max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+        .profile-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-color); margin-bottom: 20px; box-shadow: 0 0 25px rgba(56, 189, 248, 0.35); }
         .hero h1 { font-size: 2.8rem; margin-bottom: 15px; }
         .hero h1 span { color: var(--accent-color); }
         .hero .subtitle { color: var(--accent-color); font-size: 1.2rem; font-weight: 600; margin-bottom: 15px; }
         .hero p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 30px; }
-        .social-buttons a { display: inline-block; color: var(--text-main); background-color: var(--card-bg); padding: 10px 20px; border-radius: 8px; text-decoration: none; margin: 0 5px 10px; border: 1px solid var(--border-color); transition: all 0.3s ease; }
-        .social-buttons a:hover { border-color: var(--accent-color); color: var(--accent-color); transform: translateY(-2px); }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        .social-buttons a { display: inline-block; color: var(--text-main); background-color: var(--card-bg); padding: 10px 20px; border-radius: 8px; text-decoration: none; margin: 0 5px 10px; border: 1px solid var(--border-color); transition: all 0.3s ease; backdrop-filter: blur(10px); }
+        .social-buttons a:hover { border-color: var(--accent-color); color: var(--accent-color); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(56, 189, 248, 0.2); }
+        
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
         section { margin-bottom: 60px; }
         .section-title { font-size: 1.6rem; margin-bottom: 25px; border-bottom: 2px solid var(--border-color); padding-bottom: 8px; display: inline-block; color: var(--text-main); }
-        .card { background-color: var(--card-bg); border-radius: 12px; padding: 25px; border: 1px solid var(--border-color); margin-bottom: 20px; transition: transform 0.3s, border-color 0.3s; }
-        .card:hover { border-color: var(--accent-color); }
+        
+        .card { background-color: var(--card-bg); border-radius: 12px; padding: 25px; border: 1px solid var(--border-color); margin-bottom: 20px; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; backdrop-filter: blur(10px); }
+        .card:hover { border-color: var(--accent-color); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15); }
         .card h3 { font-size: 1.25rem; margin-bottom: 5px; }
         .card .meta { color: var(--accent-color); font-size: 0.9rem; font-weight: 500; margin-bottom: 12px; }
         .card p { color: var(--text-muted); font-size: 0.95rem; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
         .tags { margin: 15px 0; }
-        .tag { display: inline-block; background-color: rgba(56, 189, 248, 0.1); color: var(--accent-color); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; margin-right: 5px; margin-bottom: 5px; }
-        .card-link { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .tag { display: inline-block; background-color: rgba(56, 189, 248, 0.15); color: var(--accent-color); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; margin-right: 5px; margin-bottom: 5px; border: 1px solid rgba(56, 189, 248, 0.2); }
+        .card-link { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-right: 15px; }
+        .demo-btn { display: inline-block; background-color: rgba(56, 189, 248, 0.15); color: var(--accent-color); padding: 6px 14px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.85rem; border: 1px solid rgba(56, 189, 248, 0.3); transition: all 0.3s ease; }
+        .demo-btn:hover { background-color: var(--accent-color); color: var(--bg-color); }
         .skills-group { margin-bottom: 20px; }
         .skills-group h4 { font-size: 1rem; margin-bottom: 10px; color: var(--text-main); }
-        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border-color); margin-top: 50px; }
+        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border-color); margin-top: 50px; position: relative; z-index: 1; }
     </style>
 </head>
 <body>
+
+    <!-- Tech Animated Background Canvas -->
+    <canvas id="tech-bg"></canvas>
+
     <nav>
         <div class="logo">Umar Saeed</div>
         <div class="nav-links">
@@ -76,7 +89,10 @@
                     <div class="tags">
                         <span class="tag">System Design</span><span class="tag">JavaScript</span><span class="tag">Cloud Architecture</span>
                     </div>
-                    <a href="https://github.com/UmarSaeedTech/BloodLink" target="_blank" class="card-link">View Repository &rarr;</a>
+                    <div style="margin-top: 15px;">
+                        <a href="https://github.com/UmarSaeedTech/BloodLink" target="_blank" class="card-link">View Repo &rarr;</a>
+                        <a href="https://github.com/UmarSaeedTech/BloodLink" target="_blank" class="demo-btn"><i class="fas fa-desktop"></i> View PPT & Prototype</a>
+                    </div>
                 </div>
 
                 <div class="card">
@@ -86,7 +102,10 @@
                     <div class="tags">
                         <span class="tag">YOLOv8/v11/v12</span><span class="tag">PyTorch</span><span class="tag">OpenCV</span><span class="tag">Threat AI</span>
                     </div>
-                    <a href="https://github.com/UmarSaeedTech" target="_blank" class="card-link">Explore Code &rarr;</a>
+                    <div style="margin-top: 15px;">
+                        <a href="https://github.com/UmarSaeedTech" target="_blank" class="card-link">View Code &rarr;</a>
+                        <a href="https://drive.google.com/file/d/1lmG5ZtUZTeOetD4NID-ZyVZbS9OcvWwn/view?usp=drive_link" target="_blank" class="demo-btn"><i class="fas fa-play-circle"></i> Watch Video Demo</a>
+                    </div>
                 </div>
 
                 <div class="card">
@@ -96,7 +115,10 @@
                     <div class="tags">
                         <span class="tag">YOLOv8</span><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Safety Compliance</span>
                     </div>
-                    <a href="https://github.com/UmarSaeedTech" target="_blank" class="card-link">Explore Code &rarr;</a>
+                    <div style="margin-top: 15px;">
+                        <a href="https://github.com/UmarSaeedTech" target="_blank" class="card-link">View Code &rarr;</a>
+                        <a href="https://drive.google.com/file/d/1p8I0zkYIikxmoau5nw-5AV4sELdHjZgp/view?usp=drive_link" target="_blank" class="demo-btn"><i class="fas fa-play-circle"></i> Watch Video Demo</a>
+                    </div>
                 </div>
 
                 <div class="card">
@@ -106,7 +128,9 @@
                     <div class="tags">
                         <span class="tag">Python</span><span class="tag">MediaPipe</span><span class="tag">PyAutoGUI</span><span class="tag">OpenCV</span>
                     </div>
-                    <a href="https://github.com/UmarSaeedTech" target="_blank" class="card-link">View Repository &rarr;</a>
+                    <div style="margin-top: 15px;">
+                        <a href="https://github.com/UmarSaeedTech" target="_blank" class="card-link">View Repo &rarr;</a>
+                    </div>
                 </div>
 
             </div>
@@ -179,5 +203,67 @@
     <footer>
         <p>&copy; 2026 Umar Saeed. Built & Hosted on GitHub Pages.</p>
     </footer>
+
+    <!-- Interactive Particle Neural Network Background Script -->
+    <script>
+        const canvas = document.getElementById('tech-bg');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const particles = [];
+        const particleCount = Math.min(Math.floor(window.innerWidth / 15), 65);
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.6,
+                vy: (Math.random() - 0.5) * 0.6,
+                radius: Math.random() * 1.8 + 1
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < particles.length; i++) {
+                let p = particles[i];
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(56, 189, 248, 0.5)';
+                ctx.fill();
+
+                for (let j = i + 1; j < particles.length; j++) {
+                    let p2 = particles[j];
+                    let dx = p.x - p2.x;
+                    let dy = p.y - p2.y;
+                    let dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = `rgba(56, 189, 248, ${0.25 * (1 - dist / 120)})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
 </body>
 </html>
