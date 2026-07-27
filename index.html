@@ -34,47 +34,15 @@
         .card { background-color: var(--card-bg); border-radius: 12px; padding: 20px; border: 1px solid var(--border-color); margin-bottom: 20px; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between; }
         .card:hover { border-color: var(--accent-color); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15); }
         
-        /* Computer Vision Live Demo Bounding Box Graphic Blocks */
-        .cv-preview-box {
-            width: 100%;
-            height: 180px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 15px;
-            background: #0f172a;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .bounding-box {
-            position: absolute;
-            border: 2px solid;
-            border-radius: 4px;
-            padding: 2px 6px;
-            font-size: 0.72rem;
-            font-weight: 700;
-            font-family: monospace;
-            background: rgba(15, 23, 42, 0.7);
-        }
-        .bbox-danger { border-color: #ef4444; color: #ef4444; top: 25%; left: 20%; width: 55%; height: 50%; }
-        .bbox-success { border-color: #10b981; color: #10b981; top: 20%; left: 30%; width: 40%; height: 55%; }
-        .bbox-info { border-color: #38bdf8; color: #38bdf8; top: 15%; left: 15%; width: 70%; height: 65%; }
+        /* Dual Image Container for Side-by-Side Comparisons */
+        .dual-img-container { display: flex; gap: 8px; width: 100%; height: 210px; margin-bottom: 15px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); background-color: #0f172a; }
+        .dual-img-box { flex: 1; position: relative; height: 100%; overflow: hidden; }
+        .dual-img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .img-badge { position: absolute; bottom: 6px; left: 6px; background: rgba(15, 23, 42, 0.85); color: var(--accent-color); font-size: 0.68rem; font-weight: 700; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border-color); font-family: monospace; }
+        .img-badge.danger { color: #ef4444; border-color: #ef4444; }
+        .img-badge.success { color: #10b981; border-color: #10b981; }
 
-        .cam-badge {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            background: rgba(239, 68, 68, 0.85);
-            color: #fff;
-            font-size: 0.65rem;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 4px;
-            letter-spacing: 1px;
-        }
+        .single-img-container { width: 100%; height: 210px; margin-bottom: 15px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); background: radial-gradient(circle at center, #0c4a6e 0%, #0f172a 100%); display: flex; align-items: center; justify-content: center; position: relative; }
 
         .card h3 { font-size: 1.25rem; margin-bottom: 5px; text-align: center; color: var(--accent-color); }
         .card .meta { color: var(--text-main); font-size: 0.88rem; font-weight: 500; margin-bottom: 12px; text-align: center; }
@@ -124,18 +92,45 @@
             <h2 class="section-title">Featured Projects</h2>
             <div class="grid">
                 
-                <!-- 1. Weapon & Threat Detection -->
+                <!-- 1. Helmet Compliance (Dual Image Side-by-Side) -->
                 <div class="card">
-                    <div class="cv-preview-box" style="background: radial-gradient(circle at center, #1e1b4b 0%, #0f172a 100%);">
-                        <span class="cam-badge">REC · LIVE FEED</span>
-                        <div class="bounding-box bbox-danger">
-                            THREAT_DETECTED: 98.4%<br>CLASS: Handgun / Weapon
+                    <div class="dual-img-container">
+                        <div class="dual-img-box">
+                            <img src="with_helmet_demo.jpg" alt="Rider With Helmet Detection">
+                            <span class="img-badge success">WITH HELMET: 0.85</span>
                         </div>
-                        <i class="fas fa-shield-virus" style="font-size: 3rem; color: rgba(239, 68, 68, 0.3);"></i>
+                        <div class="dual-img-box">
+                            <img src="helmet_demo.jpg" alt="No Helmet Violation Detection">
+                            <span class="img-badge danger">VIOLATION: NO HELMET</span>
+                        </div>
+                    </div>
+                    <h3>PPE & Helmet Compliance System</h3>
+                    <div class="meta">Traffic Safety & Industrial Computer Vision</div>
+                    <p>Engineered real-time computer vision pipelines classifying helmet riders vs. non-compliant riders with active red-line alert overlays on live traffic feeds.</p>
+                    <div class="tags">
+                        <span class="tag">YOLOv8</span><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Traffic AI</span>
+                    </div>
+                    <div class="action-links">
+                        <a href="https://github.com/UmarSaeedTech" target="_blank" class="card-link">View Code &rarr;</a>
+                        <a href="https://drive.google.com/file/d/1p8I0zkYIikxmoau5nw-5AV4sELdHjZgp/view?usp=drive_link" target="_blank" class="demo-btn"><i class="fas fa-play-circle"></i> Watch Live Demo</a>
+                    </div>
+                </div>
+
+                <!-- 2. Weapon & Threat Detection (Dual Image Side-by-Side) -->
+                <div class="card">
+                    <div class="dual-img-container">
+                        <div class="dual-img-box">
+                            <img src="before_weapon_demo.jpg" alt="Baseline CCTV Stream">
+                            <span class="img-badge">BASELINE STREAM</span>
+                        </div>
+                        <div class="dual-img-box">
+                            <img src="weapon_demo.jpg" alt="Threat Detected Overlay">
+                            <span class="img-badge danger">THREAT DETECTED</span>
+                        </div>
                     </div>
                     <h3>Multi-Class Threat & Weapon Detection</h3>
-                    <div class="meta">Real-Time Autonomous Safety Pipeline</div>
-                    <p>Engineered custom YOLOv8/v11/v12 detection architectures for high-speed identification of firearms, hammers, and lethal rods with low latency on live CCTV feeds.</p>
+                    <div class="meta">NCAI 'Smart Eye' Autonomous Threat Pipeline</div>
+                    <p>Engineered YOLOv8/v11/v12 detection models identifying firearms, hammers, and lethal rods with low latency and automated alarm triggers on CCTV feeds.</p>
                     <div class="tags">
                         <span class="tag">YOLOv8/v11/v12</span><span class="tag">PyTorch</span><span class="tag">OpenCV</span><span class="tag">Threat AI</span>
                     </div>
@@ -145,39 +140,18 @@
                     </div>
                 </div>
 
-                <!-- 2. Helmet & PPE Compliance -->
+                <!-- 3. BloodLink Framework -->
                 <div class="card">
-                    <div class="cv-preview-box" style="background: radial-gradient(circle at center, #064e3b 0%, #0f172a 100%);">
-                        <span class="cam-badge" style="background: rgba(16, 185, 129, 0.85);">REC · SITE FEED</span>
-                        <div class="bounding-box bbox-success">
-                            HELMET_OK: 99.1%<br>PPE_VEST: DETECTED
+                    <div class="single-img-container" style="background: radial-gradient(circle at center, #0284c7 0%, #0f172a 100%);">
+                        <div style="text-align: center; padding: 20px;">
+                            <i class="fas fa-heartbeat" style="font-size: 3rem; color: #38bdf8; margin-bottom: 10px;"></i>
+                            <div style="font-family: monospace; font-weight: 700; color: #f8fafc; font-size: 0.95rem;">BLOODLINK DISPATCH SYSTEM</div>
+                            <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 4px;">Generative Matching & Cloud Architecture</div>
                         </div>
-                        <i class="fas fa-hard-hat" style="font-size: 3rem; color: rgba(16, 185, 129, 0.3);"></i>
-                    </div>
-                    <h3>PPE & Helmet Compliance System</h3>
-                    <div class="meta">Industrial Safety Computer Vision</div>
-                    <p>Developed real-time computer vision modules enforcing site safety compliance by automatically monitoring helmets and personal protective equipment (PPE) across industrial streams.</p>
-                    <div class="tags">
-                        <span class="tag">YOLOv8</span><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Safety Compliance</span>
-                    </div>
-                    <div class="action-links">
-                        <a href="https://github.com/UmarSaeedTech" target="_blank" class="card-link">View Code &rarr;</a>
-                        <a href="https://drive.google.com/file/d/1p8I0zkYIikxmoau5nw-5AV4sELdHjZgp/view?usp=drive_link" target="_blank" class="demo-btn"><i class="fas fa-play-circle"></i> Watch Live Demo</a>
-                    </div>
-                </div>
-
-                <!-- 3. BloodLink -->
-                <div class="card">
-                    <div class="cv-preview-box" style="background: radial-gradient(circle at center, #0c4a6e 0%, #0f172a 100%);">
-                        <span class="cam-badge" style="background: rgba(56, 189, 248, 0.85);">FRAMEWORK</span>
-                        <div class="bounding-box bbox-info">
-                            SYSTEM: BloodLink AI<br>DISPATCH: ACTIVE MATCH
-                        </div>
-                        <i class="fas fa-heartbeat" style="font-size: 3rem; color: rgba(56, 189, 248, 0.3);"></i>
                     </div>
                     <h3>BloodLink Framework</h3>
                     <div class="meta">Generative AI & Cloud Matching Framework</div>
-                    <p>Architected an end-to-end blood donation matching system featuring interactive prototypes, real-time dispatch logic, and cloud architecture specifications.</p>
+                    <p>Architected an end-to-end blood donation matching system featuring interactive web prototypes, real-time dispatch logic, and cloud specifications.</p>
                     <div class="tags">
                         <span class="tag">System Design</span><span class="tag">JavaScript</span><span class="tag">Cloud Architecture</span>
                     </div>
@@ -187,18 +161,18 @@
                     </div>
                 </div>
 
-                <!-- 4. Virtual Mouse -->
+                <!-- 4. Virtual Mouse HCI -->
                 <div class="card">
-                    <div class="cv-preview-box" style="background: radial-gradient(circle at center, #312e81 0%, #0f172a 100%);">
-                        <span class="cam-badge" style="background: rgba(129, 140, 248, 0.85);">HCI FEED</span>
-                        <div class="bounding-box" style="border-color: #818cf8; color: #818cf8; top: 20%; left: 20%; width: 60%; height: 60%;">
-                            HAND_LANDMARKS: 21 PTS<br>CURSOR_MAP: ACTIVE
+                    <div class="single-img-container" style="background: radial-gradient(circle at center, #4f46e5 0%, #0f172a 100%);">
+                        <div style="text-align: center; padding: 20px;">
+                            <i class="fas fa-hand-pointer" style="font-size: 3rem; color: #818cf8; margin-bottom: 10px;"></i>
+                            <div style="font-family: monospace; font-weight: 700; color: #f8fafc; font-size: 0.95rem;">MEDIAPIPE HCI TRACKER</div>
+                            <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 4px;">21-Point Landmark Hand Gesture Mapper</div>
                         </div>
-                        <i class="fas fa-hand-pointer" style="font-size: 3rem; color: rgba(129, 140, 248, 0.3);"></i>
                     </div>
                     <h3>AI Virtual Mouse Interface</h3>
                     <div class="meta">Human-Computer Interaction (HCI)</div>
-                    <p>Engineered a low-latency gesture control interface utilizing MediaPipe hand tracking and PyAutoGUI to map real-time hand movements to cursor control.</p>
+                    <p>Engineered a gesture control interface using MediaPipe hand tracking and PyAutoGUI to map real-time hand movements to system cursor and click operations.</p>
                     <div class="tags">
                         <span class="tag">Python</span><span class="tag">MediaPipe</span><span class="tag">PyAutoGUI</span><span class="tag">OpenCV</span>
                     </div>
