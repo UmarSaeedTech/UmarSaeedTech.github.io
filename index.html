@@ -4,58 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Umar Saeed — AI Researcher & CS Scholar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --bg-color: #0b1120; --card-bg: rgba(30, 41, 59, 0.85); --accent-color: #38bdf8; --text-main: #f8fafc; --text-muted: #94a3b8; --border-color: #334155; }
+        :root { 
+            --bg-color: #0b1120; 
+            --card-bg: rgba(30, 41, 59, 0.75); 
+            --accent-color: #38bdf8; 
+            --accent-glow: rgba(56, 189, 248, 0.35);
+            --text-main: #f8fafc; 
+            --text-muted: #94a3b8; 
+            --border-color: #334155; 
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding-bottom: 60px; overflow-x: hidden; position: relative; }
         
         #tech-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; }
         
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background-color: rgba(11, 17, 32, 0.85); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); }
-        .logo { font-size: 1.2rem; font-weight: 700; color: var(--accent-color); }
-        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 20px; font-weight: 500; transition: color 0.3s; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background-color: rgba(11, 17, 32, 0.88); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-color); }
+        .logo { font-size: 1.25rem; font-weight: 800; color: var(--accent-color); letter-spacing: -0.5px; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 22px; font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
         .nav-links a:hover { color: var(--accent-color); }
         
         .hero { padding: 80px 10% 40px; text-align: center; max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
-        .profile-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-color); margin-bottom: 20px; box-shadow: 0 0 25px rgba(56, 189, 248, 0.35); }
-        .hero h1 { font-size: 2.8rem; margin-bottom: 15px; }
+        .profile-img { width: 145px; height: 145px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-color); margin-bottom: 20px; box-shadow: 0 0 30px var(--accent-glow); }
+        .hero h1 { font-size: 2.9rem; margin-bottom: 12px; font-weight: 800; }
         .hero h1 span { color: var(--accent-color); }
-        .hero .subtitle { color: var(--accent-color); font-size: 1.2rem; font-weight: 600; margin-bottom: 15px; }
+        .hero .subtitle { color: var(--accent-color); font-size: 1.2rem; font-weight: 600; margin-bottom: 15px; letter-spacing: 0.2px; }
         .hero p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 30px; }
-        .social-buttons a { display: inline-block; color: var(--text-main); background-color: var(--card-bg); padding: 10px 20px; border-radius: 8px; text-decoration: none; margin: 0 5px 10px; border: 1px solid var(--border-color); transition: all 0.3s ease; backdrop-filter: blur(10px); }
-        .social-buttons a:hover { border-color: var(--accent-color); color: var(--accent-color); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(56, 189, 248, 0.2); }
+        .social-buttons a { display: inline-block; color: var(--text-main); background-color: var(--card-bg); padding: 10px 22px; border-radius: 8px; text-decoration: none; margin: 0 6px 12px; border: 1px solid var(--border-color); font-weight: 500; font-size: 0.92rem; transition: all 0.3s ease; backdrop-filter: blur(10px); }
+        .social-buttons a:hover { border-color: var(--accent-color); color: var(--accent-color); transform: translateY(-2px); box-shadow: 0 5px 20px rgba(56, 189, 248, 0.2); }
         
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
-        section { margin-bottom: 60px; }
-        .section-title { font-size: 1.6rem; margin-bottom: 25px; border-bottom: 2px solid var(--border-color); padding-bottom: 8px; display: inline-block; color: var(--text-main); }
+        .container { max-width: 1020px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
+        section { margin-bottom: 65px; }
+        .section-title { font-size: 1.65rem; margin-bottom: 25px; border-bottom: 2px solid var(--border-color); padding-bottom: 8px; display: inline-block; color: var(--text-main); font-weight: 700; }
         
-        .card { background-color: var(--card-bg); border-radius: 12px; padding: 20px; border: 1px solid var(--border-color); margin-bottom: 20px; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between; }
-        .card:hover { border-color: var(--accent-color); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15); }
+        .card { background-color: var(--card-bg); border-radius: 14px; padding: 22px; border: 1px solid var(--border-color); margin-bottom: 20px; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; backdrop-filter: blur(12px); display: flex; flex-direction: column; justify-content: space-between; }
+        .card:hover { border-color: var(--accent-color); transform: translateY(-3px); box-shadow: 0 12px 35px rgba(56, 189, 248, 0.15); }
         
-        /* Dual Image Container for Side-by-Side Comparisons */
-        .dual-img-container { display: flex; gap: 8px; width: 100%; height: 210px; margin-bottom: 15px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); background-color: #0f172a; }
+        .dual-img-container { display: flex; gap: 10px; width: 100%; height: 215px; margin-bottom: 16px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border-color); background-color: #0f172a; }
         .dual-img-box { flex: 1; position: relative; height: 100%; overflow: hidden; }
         .dual-img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .img-badge { position: absolute; bottom: 6px; left: 6px; background: rgba(15, 23, 42, 0.85); color: var(--accent-color); font-size: 0.68rem; font-weight: 700; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border-color); font-family: monospace; }
-        .img-badge.danger { color: #ef4444; border-color: #ef4444; }
-        .img-badge.success { color: #10b981; border-color: #10b981; }
+        .img-badge { position: absolute; bottom: 8px; left: 8px; background: rgba(15, 23, 42, 0.88); color: var(--accent-color); font-size: 0.7rem; font-weight: 700; padding: 3px 8px; border-radius: 5px; border: 1px solid var(--border-color); font-family: 'JetBrains Mono', monospace; }
+        .img-badge.danger { color: #ef4444; border-color: rgba(239, 68, 68, 0.5); }
+        .img-badge.success { color: #10b981; border-color: rgba(16, 185, 129, 0.5); }
 
-        .single-img-container { width: 100%; height: 210px; margin-bottom: 15px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); background: radial-gradient(circle at center, #0c4a6e 0%, #0f172a 100%); display: flex; align-items: center; justify-content: center; position: relative; }
+        .single-img-container { width: 100%; height: 215px; margin-bottom: 16px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border-color); background: radial-gradient(circle at center, #0c4a6e 0%, #0f172a 100%); display: flex; align-items: center; justify-content: center; position: relative; }
 
-        .card h3 { font-size: 1.25rem; margin-bottom: 5px; text-align: center; color: var(--accent-color); }
+        .card h3 { font-size: 1.25rem; margin-bottom: 5px; text-align: center; color: var(--accent-color); font-weight: 700; }
         .card .meta { color: var(--text-main); font-size: 0.88rem; font-weight: 500; margin-bottom: 12px; text-align: center; }
         .card p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 15px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 25px; }
         .tags { margin: 10px 0 15px; text-align: center; }
-        .tag { display: inline-block; background-color: rgba(56, 189, 248, 0.15); color: var(--accent-color); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; margin-right: 5px; margin-bottom: 5px; border: 1px solid rgba(56, 189, 248, 0.2); }
-        .action-links { display: flex; justify-content: space-around; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: auto; }
+        .tag { display: inline-block; background-color: rgba(56, 189, 248, 0.12); color: var(--accent-color); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; margin-right: 5px; margin-bottom: 5px; border: 1px solid rgba(56, 189, 248, 0.25); font-weight: 500; }
+        .action-links { display: flex; justify-content: space-around; align-items: center; border-top: 1px solid var(--border-color); padding-top: 14px; margin-top: auto; }
         .card-link { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-        .demo-btn { display: inline-block; background-color: rgba(56, 189, 248, 0.15); color: var(--accent-color); padding: 6px 14px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.85rem; border: 1px solid rgba(56, 189, 248, 0.3); transition: all 0.3s ease; }
-        .demo-btn:hover { background-color: var(--accent-color); color: var(--bg-color); }
-        .skills-group { margin-bottom: 20px; }
-        .skills-group h4 { font-size: 1rem; margin-bottom: 10px; color: var(--text-main); }
+        .demo-btn { display: inline-block; background-color: rgba(56, 189, 248, 0.15); color: var(--accent-color); padding: 7px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.85rem; border: 1px solid rgba(56, 189, 248, 0.3); transition: all 0.3s ease; }
+        .demo-btn:hover { background-color: var(--accent-color); color: var(--bg-color); box-shadow: 0 0 15px var(--accent-glow); }
+
+        .skills-container { background: rgba(15, 23, 42, 0.85); border: 1px solid var(--border-color); border-radius: 16px; padding: 30px 25px; backdrop-filter: blur(14px); box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        .skills-nodes-wrapper { display: flex; justify-content: center; align-items: flex-start; gap: 22px; flex-wrap: wrap; margin-bottom: 35px; }
+        .skill-node-btn { display: flex; flex-direction: column; align-items: center; cursor: pointer; background: none; border: none; outline: none; width: 125px; transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .skill-node-btn:hover { transform: translateY(-5px); }
+        
+        .node-icon-circle { width: 72px; height: 72px; border-radius: 50%; border: 2px solid var(--border-color); background: rgba(30, 41, 59, 0.9); display: flex; align-items: center; justify-content: center; font-size: 1.65rem; color: var(--text-muted); margin-bottom: 12px; transition: all 0.3s ease; position: relative; }
+        .node-icon-circle::after { content: ''; position: absolute; inset: -4px; border-radius: 50%; border: 1px solid transparent; transition: all 0.3s ease; }
+        
+        .skill-node-btn.active .node-icon-circle, .skill-node-btn:hover .node-icon-circle { border-color: var(--accent-color); color: var(--accent-color); background: rgba(56, 189, 248, 0.12); box-shadow: 0 0 25px var(--accent-glow); }
+        .skill-node-btn.active .node-icon-circle::after { border-color: rgba(56, 189, 248, 0.4); animation: pulseGlow 2s infinite; }
+        
+        @keyframes pulseGlow {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.08); opacity: 0.3; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        .node-label { font-size: 0.85rem; font-weight: 600; color: var(--text-muted); text-align: center; transition: color 0.3s; line-height: 1.25; }
+        .skill-node-btn.active .node-label, .skill-node-btn:hover .node-label { color: var(--accent-color); }
+        
+        .skills-display-box { background: rgba(30, 41, 59, 0.6); border: 1px solid var(--border-color); border-radius: 12px; padding: 28px 22px; text-align: center; min-height: 120px; backdrop-filter: blur(10px); transition: opacity 0.3s ease; }
+        .skills-grid-inner { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 10px; }
+        
+        .skill-pill-enhanced { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+            background: rgba(56, 189, 248, 0.12); 
+            color: var(--accent-color); 
+            padding: 9px 18px; 
+            border-radius: 30px; 
+            font-size: 0.9rem; 
+            font-weight: 600; 
+            border: 1px solid rgba(56, 189, 248, 0.3); 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .skill-pill-enhanced:hover { 
+            background: var(--accent-color); 
+            color: var(--bg-color); 
+            transform: translateY(-2px) scale(1.04); 
+            box-shadow: 0 5px 20px var(--accent-glow);
+        }
+        .skill-pill-enhanced i { font-size: 0.85rem; opacity: 0.9; }
+
+        .domain-header { color: var(--text-main); font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.8px; font-family: 'JetBrains Mono', monospace; }
+        .domain-desc { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 18px; max-width: 650px; margin-left: auto; margin-right: auto; }
+
         footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border-color); margin-top: 50px; position: relative; z-index: 1; }
     </style>
 </head>
@@ -92,7 +146,7 @@
             <h2 class="section-title">Featured Projects</h2>
             <div class="grid">
                 
-                <!-- 1. Helmet Compliance (Dual Image Side-by-Side) -->
+                <!-- 1. Helmet Compliance -->
                 <div class="card">
                     <div class="dual-img-container">
                         <div class="dual-img-box">
@@ -116,7 +170,7 @@
                     </div>
                 </div>
 
-                <!-- 2. Weapon & Threat Detection (Dual Image Side-by-Side) -->
+                <!-- 2. Weapon & Threat Detection -->
                 <div class="card">
                     <div class="dual-img-container">
                         <div class="dual-img-box">
@@ -142,11 +196,11 @@
 
                 <!-- 3. BloodLink Framework -->
                 <div class="card">
-                    <div class="single-img-container" style="background: radial-gradient(circle at center, #0284c7 0%, #0f172a 100%);">
+                    <div class="single-img-container">
                         <div style="text-align: center; padding: 20px;">
-                            <i class="fas fa-heartbeat" style="font-size: 3rem; color: #38bdf8; margin-bottom: 10px;"></i>
-                            <div style="font-family: monospace; font-weight: 700; color: #f8fafc; font-size: 0.95rem;">BLOODLINK DISPATCH SYSTEM</div>
-                            <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 4px;">Generative Matching & Cloud Architecture</div>
+                            <i class="fas fa-heartbeat" style="font-size: 3.2rem; color: #38bdf8; margin-bottom: 12px;"></i>
+                            <div style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #f8fafc; font-size: 0.98rem; letter-spacing: 0.5px;">BLOODLINK DISPATCH SYSTEM</div>
+                            <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 4px;">Generative Matching & Cloud Architecture</div>
                         </div>
                     </div>
                     <h3>BloodLink Framework</h3>
@@ -165,9 +219,9 @@
                 <div class="card">
                     <div class="single-img-container" style="background: radial-gradient(circle at center, #4f46e5 0%, #0f172a 100%);">
                         <div style="text-align: center; padding: 20px;">
-                            <i class="fas fa-hand-pointer" style="font-size: 3rem; color: #818cf8; margin-bottom: 10px;"></i>
-                            <div style="font-family: monospace; font-weight: 700; color: #f8fafc; font-size: 0.95rem;">MEDIAPIPE HCI TRACKER</div>
-                            <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 4px;">21-Point Landmark Hand Gesture Mapper</div>
+                            <i class="fas fa-hand-pointer" style="font-size: 3.2rem; color: #818cf8; margin-bottom: 12px;"></i>
+                            <div style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #f8fafc; font-size: 0.98rem; letter-spacing: 0.5px;">MEDIAPIPE HCI TRACKER</div>
+                            <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 4px;">21-Point Landmark Hand Gesture Mapper</div>
                         </div>
                     </div>
                     <h3>AI Virtual Mouse Interface</h3>
@@ -184,6 +238,47 @@
             </div>
         </section>
 
+        <!-- Premium Interactive Skills Graph -->
+        <section id="skills">
+            <h2 class="section-title">Technical Toolkit & Research Domains</h2>
+            <p style="color: var(--text-muted); text-align: center; margin-bottom: 25px; font-size: 0.98rem;">Select a research node to inspect the specific frameworks, languages, and architectures behind my work:</p>
+            
+            <div class="skills-container">
+                <div class="skills-nodes-wrapper">
+                    
+                    <button class="skill-node-btn active" onclick="switchSkillNode('cv', this)">
+                        <div class="node-icon-circle"><i class="fas fa-eye"></i></div>
+                        <span class="node-label">Computer Vision</span>
+                    </button>
+
+                    <button class="skill-node-btn" onclick="switchSkillNode('dl', this)">
+                        <div class="node-icon-circle"><i class="fas fa-brain"></i></div>
+                        <span class="node-label">Deep Learning & Frameworks</span>
+                    </button>
+
+                    <button class="skill-node-btn" onclick="switchSkillNode('lang', this)">
+                        <div class="node-icon-circle"><i class="fas fa-code"></i></div>
+                        <span class="node-label">Languages & Core</span>
+                    </button>
+
+                    <button class="skill-node-btn" onclick="switchSkillNode('tools', this)">
+                        <div class="node-icon-circle"><i class="fas fa-terminal"></i></div>
+                        <span class="node-label">Tools & Environment</span>
+                    </button>
+
+                    <button class="skill-node-btn" onclick="switchSkillNode('twin', this)">
+                        <div class="node-icon-circle"><i class="fas fa-cubes"></i></div>
+                        <span class="node-label">Digital Twins & Surveillance</span>
+                    </button>
+
+                </div>
+
+                <div class="skills-display-box" id="skills-box">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+        </section>
+
         <section id="experience">
             <h2 class="section-title">Experience & Research</h2>
             <div class="card">
@@ -195,24 +290,6 @@
                 <h3>AI Research Intern</h3>
                 <div class="meta">National Center of Artificial Intelligence (NCAI) | NUST | Jul 2025 – Dec 2025</div>
                 <p>Built and optimized real-time PPE compliance models, authored project documentation, and managed end-to-end dataset annotation and evaluation protocols.</p>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="card">
-                <div class="skills-group">
-                    <h4>Artificial Intelligence & Computer Vision:</h4>
-                    <div class="tags">
-                        <span class="tag">YOLOv8 / v11 / v12</span><span class="tag">PyTorch</span><span class="tag">OpenCV</span><span class="tag">Threat Detection</span><span class="tag">PPE Compliance</span><span class="tag">HCI Interfaces</span>
-                    </div>
-                </div>
-                <div class="skills-group">
-                    <h4>Languages, Tools & Environment:</h4>
-                    <div class="tags">
-                        <span class="tag">Python</span><span class="tag">C++</span><span class="tag">Git & GitHub</span><span class="tag">macOS (Apple Silicon M3)</span><span class="tag">Ubuntu Linux</span><span class="tag">VS Code</span>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -253,6 +330,96 @@
     </footer>
 
     <script>
+        const domainData = {
+            cv: {
+                title: "Computer Vision & Object Detection",
+                desc: "Specialized in low-latency spatial perception, real-time object detection models, and surveillance vision pipelines.",
+                items: [
+                    { name: "YOLOv8 / v11 / v12", icon: "fa-draw-polygon" },
+                    { name: "OpenCV", icon: "fa-camera" },
+                    { name: "Threat & Weapon AI", icon: "fa-shield-alt" },
+                    { name: "PPE Safety Compliance", icon: "fa-hard-hat" },
+                    { name: "MediaPipe HCI Trackers", icon: "fa-hand-pointer" },
+                    { name: "CCTV Video Ingestion", icon: "fa-video" }
+                ]
+            },
+            dl: {
+                title: "Deep Learning & Neural Architectures",
+                desc: "Focusing on model architecture tuning, custom dataset engineering, and deployment-ready neural inference.",
+                items: [
+                    { name: "PyTorch", icon: "fa-fire" },
+                    { name: "Real-Time Inference", icon: "fa-bolt" },
+                    { name: "Dataset Annotation & Management", icon: "fa-database" },
+                    { name: "Loss Function Evaluation", icon: "fa-chart-line" },
+                    { name: "Bounding Box Regression", icon: "fa-vector-square" }
+                ]
+            },
+            lang: {
+                title: "Languages & Core Systems",
+                desc: "Core programming languages utilized for algorithm implementation, interface automation, and system execution.",
+                items: [
+                    { name: "Python", icon: "fab fa-python" },
+                    { name: "C++", icon: "fa-code" },
+                    { name: "JavaScript", icon: "fab fa-js" },
+                    { name: "SQL", icon: "fa-database" },
+                    { name: "Bash / Shell Scripting", icon: "fa-terminal" }
+                ]
+            },
+            tools: {
+                title: "Developer Tools & Platforms",
+                desc: "Operating systems and software environments engineered for reproducible AI models and collaborative version control.",
+                items: [
+                    { name: "Git & GitHub", icon: "fab fa-github" },
+                    { name: "macOS (Apple Silicon M3)", icon: "fab fa-apple" },
+                    { name: "Ubuntu Linux", icon: "fab fa-ubuntu" },
+                    { name: "VS Code", icon: "fa-laptop-code" },
+                    { name: "Terminal / Zsh", icon: "fa-terminal" }
+                ]
+            },
+            twin: {
+                title: "Digital Twins & Autonomous Safety",
+                desc: "Frameworks designed for intelligent real-time surveillance, cognitive twin modeling, and automated dispatch.",
+                items: [
+                    { name: "Digital Twin Systems", icon: "fa-cubes" },
+                    { name: "Cognitive Twins", icon: "fa-network-wired" },
+                    { name: "Automated Alarm Triggers", icon: "fa-bell" },
+                    { name: "Smart City Surveillance", icon: "fa-city" },
+                    { name: "Generative Matching Engines", icon: "fa-sliders-h" }
+                ]
+            }
+        };
+
+        function switchSkillNode(key, btnElement) {
+            document.querySelectorAll('.skill-node-btn').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            const box = document.getElementById('skills-box');
+            box.style.opacity = '0';
+            
+            setTimeout(() => {
+                const data = domainData[key];
+                box.innerHTML = `
+                    <div class="domain-header">${data.title}</div>
+                    <div class="domain-desc">${data.desc}</div>
+                    <div class="skills-grid-inner">
+                        ${data.items.map(item => `
+                            <span class="skill-pill-enhanced">
+                                <i class="${item.icon.includes(' ') ? item.icon : 'fas ' + item.icon}"></i>
+                                ${item.name}
+                            </span>
+                        `).join('')}
+                    </div>
+                `;
+                box.style.opacity = '1';
+            }, 150);
+        }
+
+        // Initialize default node
+        document.addEventListener('DOMContentLoaded', () => {
+            switchSkillNode('cv', document.querySelector('.skill-node-btn.active'));
+        });
+
+        // Interactive background particles
         const canvas = document.getElementById('tech-bg');
         const ctx = canvas.getContext('2d');
 
