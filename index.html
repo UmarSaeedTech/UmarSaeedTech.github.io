@@ -33,7 +33,49 @@
         
         .card { background-color: var(--card-bg); border-radius: 12px; padding: 20px; border: 1px solid var(--border-color); margin-bottom: 20px; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between; }
         .card:hover { border-color: var(--accent-color); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15); }
-        .project-img { width: 100%; height: 210px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 15px; background-color: #0f172a; }
+        
+        /* Computer Vision Live Demo Bounding Box Graphic Blocks */
+        .cv-preview-box {
+            width: 100%;
+            height: 180px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 15px;
+            background: #0f172a;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .bounding-box {
+            position: absolute;
+            border: 2px solid;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            font-family: monospace;
+            background: rgba(15, 23, 42, 0.7);
+        }
+        .bbox-danger { border-color: #ef4444; color: #ef4444; top: 25%; left: 20%; width: 55%; height: 50%; }
+        .bbox-success { border-color: #10b981; color: #10b981; top: 20%; left: 30%; width: 40%; height: 55%; }
+        .bbox-info { border-color: #38bdf8; color: #38bdf8; top: 15%; left: 15%; width: 70%; height: 65%; }
+
+        .cam-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(239, 68, 68, 0.85);
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+        }
+
         .card h3 { font-size: 1.25rem; margin-bottom: 5px; text-align: center; color: var(--accent-color); }
         .card .meta { color: var(--text-main); font-size: 0.88rem; font-weight: 500; margin-bottom: 12px; text-align: center; }
         .card p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 15px; }
@@ -84,7 +126,13 @@
                 
                 <!-- 1. Weapon & Threat Detection -->
                 <div class="card">
-                    <img src="https://raw.githubusercontent.com/pjreddie/darknet/master/data/eagle.jpg" alt="Object Detection Bounding Box Inference" class="project-img">
+                    <div class="cv-preview-box" style="background: radial-gradient(circle at center, #1e1b4b 0%, #0f172a 100%);">
+                        <span class="cam-badge">REC · LIVE FEED</span>
+                        <div class="bounding-box bbox-danger">
+                            THREAT_DETECTED: 98.4%<br>CLASS: Handgun / Weapon
+                        </div>
+                        <i class="fas fa-shield-virus" style="font-size: 3rem; color: rgba(239, 68, 68, 0.3);"></i>
+                    </div>
                     <h3>Multi-Class Threat & Weapon Detection</h3>
                     <div class="meta">Real-Time Autonomous Safety Pipeline</div>
                     <p>Engineered custom YOLOv8/v11/v12 detection architectures for high-speed identification of firearms, hammers, and lethal rods with low latency on live CCTV feeds.</p>
@@ -99,7 +147,13 @@
 
                 <!-- 2. Helmet & PPE Compliance -->
                 <div class="card">
-                    <img src="https://user-images.githubusercontent.com/26833433/222165011-37f2d847-f0b8-4c12-a727-2c93922c07d3.png" alt="PPE Helmet Real-Time Inference bounding boxes" class="project-img">
+                    <div class="cv-preview-box" style="background: radial-gradient(circle at center, #064e3b 0%, #0f172a 100%);">
+                        <span class="cam-badge" style="background: rgba(16, 185, 129, 0.85);">REC · SITE FEED</span>
+                        <div class="bounding-box bbox-success">
+                            HELMET_OK: 99.1%<br>PPE_VEST: DETECTED
+                        </div>
+                        <i class="fas fa-hard-hat" style="font-size: 3rem; color: rgba(16, 185, 129, 0.3);"></i>
+                    </div>
                     <h3>PPE & Helmet Compliance System</h3>
                     <div class="meta">Industrial Safety Computer Vision</div>
                     <p>Developed real-time computer vision modules enforcing site safety compliance by automatically monitoring helmets and personal protective equipment (PPE) across industrial streams.</p>
@@ -114,7 +168,13 @@
 
                 <!-- 3. BloodLink -->
                 <div class="card">
-                    <img src="https://raw.githubusercontent.com/UmarSaeedTech/BloodLink/main/assets/architecture_diagram.png" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80';" alt="BloodLink System Architecture" class="project-img">
+                    <div class="cv-preview-box" style="background: radial-gradient(circle at center, #0c4a6e 0%, #0f172a 100%);">
+                        <span class="cam-badge" style="background: rgba(56, 189, 248, 0.85);">FRAMEWORK</span>
+                        <div class="bounding-box bbox-info">
+                            SYSTEM: BloodLink AI<br>DISPATCH: ACTIVE MATCH
+                        </div>
+                        <i class="fas fa-heartbeat" style="font-size: 3rem; color: rgba(56, 189, 248, 0.3);"></i>
+                    </div>
                     <h3>BloodLink Framework</h3>
                     <div class="meta">Generative AI & Cloud Matching Framework</div>
                     <p>Architected an end-to-end blood donation matching system featuring interactive prototypes, real-time dispatch logic, and cloud architecture specifications.</p>
@@ -129,7 +189,13 @@
 
                 <!-- 4. Virtual Mouse -->
                 <div class="card">
-                    <img src="https://user-images.githubusercontent.com/26833433/120088921-22e6b180-c11e-11eb-9878-5a210d705a2f.png" alt="MediaPipe Gesture Tracking Overlay" class="project-img">
+                    <div class="cv-preview-box" style="background: radial-gradient(circle at center, #312e81 0%, #0f172a 100%);">
+                        <span class="cam-badge" style="background: rgba(129, 140, 248, 0.85);">HCI FEED</span>
+                        <div class="bounding-box" style="border-color: #818cf8; color: #818cf8; top: 20%; left: 20%; width: 60%; height: 60%;">
+                            HAND_LANDMARKS: 21 PTS<br>CURSOR_MAP: ACTIVE
+                        </div>
+                        <i class="fas fa-hand-pointer" style="font-size: 3rem; color: rgba(129, 140, 248, 0.3);"></i>
+                    </div>
                     <h3>AI Virtual Mouse Interface</h3>
                     <div class="meta">Human-Computer Interaction (HCI)</div>
                     <p>Engineered a low-latency gesture control interface utilizing MediaPipe hand tracking and PyAutoGUI to map real-time hand movements to cursor control.</p>
