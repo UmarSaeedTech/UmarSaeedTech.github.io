@@ -3,35 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Eye Case Study | Umar Saeed</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Autonomous Threat & PPE Detection Pipeline | Umar Saeed</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body { background: #0b1120; color: #f8fafc; font-family: 'Inter', sans-serif; padding: 40px 10%; line-height: 1.8; max-width: 800px; margin: 0 auto; }
-        a { color: #38bdf8; text-decoration: none; font-weight: 600; }
-        h1 { font-size: 2.2rem; color: #38bdf8; margin-bottom: 10px; }
-        .meta { color: #94a3b8; font-size: 0.9rem; margin-bottom: 30px; border-bottom: 1px solid #334155; padding-bottom: 15px; }
-        h2 { color: #f8fafc; margin-top: 30px; margin-bottom: 10px; }
-        p { color: #94a3b8; margin-bottom: 20px; }
-        ul { color: #94a3b8; margin-left: 20px; margin-bottom: 20px; }
-        li { margin-bottom: 8px; }
+        :root {
+            --bg-color: #0b1120;
+            --card-bg: rgba(30, 41, 59, 0.75);
+            --accent-color: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --danger-color: #ef4444;
+            --success-color: #10b981;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.8; padding: 50px 10%; max-width: 900px; margin: 0 auto; }
+        a.back-btn { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem; display: inline-block; margin-bottom: 25px; transition: transform 0.2s; }
+        a.back-btn:hover { transform: translateX(-4px); }
+        h1 { font-size: 2.3rem; font-weight: 800; color: var(--text-main); line-height: 1.3; margin-bottom: 12px; }
+        .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 35px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; font-family: 'JetBrains Mono', monospace; }
+        h2 { font-size: 1.4rem; color: var(--accent-color); margin-top: 35px; margin-bottom: 15px; font-weight: 700; border-left: 3px solid var(--accent-color); padding-left: 10px; }
+        p { color: var(--text-muted); margin-bottom: 20px; font-size: 1.02rem; }
+        ul { color: var(--text-muted); margin-left: 20px; margin-bottom: 25px; }
+        li { margin-bottom: 10px; font-size: 1rem; }
+        strong { color: var(--text-main); }
+        .highlight-box { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 22px; margin: 25px 0; backdrop-filter: blur(10px); }
+        .highlight-box h3 { color: var(--text-main); font-size: 1.1rem; margin-bottom: 10px; }
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; margin-right: 8px; }
+        .badge.danger { background: rgba(239, 68, 68, 0.15); color: var(--danger-color); border: 1px solid rgba(239, 68, 68, 0.3); }
+        .badge.success { background: rgba(16, 185, 129, 0.15); color: var(--success-color); border: 1px solid rgba(16, 185, 129, 0.3); }
     </style>
 </head>
 <body>
-    <a href="index.html#blog">&larr; Back to Portfolio</a>
-    <h1 style="margin-top: 20px;">Building Real-Time Autonomous Surveillance: Firearm & Threat Detection with YOLOv12</h1>
-    <div class="meta">Published by Umar Saeed • Computer Vision & Real-Time AI Specialist</div>
 
-    <h2>1. Executive Summary</h2>
-    <p>Automated threat monitoring requires high recall and sub-second detection latency across concurrent CCTV channels. The Smart Eye system integrates custom-trained YOLO architectures with OpenCV processing pipelines to detect firearms and industrial hazards in real time.</p>
+    <a href="index.html#blog" class="back-btn">&larr; Back to Portfolio</a>
+    
+    <h1>Engineering Real-Time Multi-Class Threat & PPE Safety Surveillance Pipelines</h1>
+    <div class="meta">Case Study • Published by Umar Saeed • AI Researcher & Computer Vision Developer</div>
 
-    <h2>2. Technical Architecture & Engineering</h2>
+    <div class="highlight-box">
+        <h3>Executive Brief</h3>
+        <p style="margin-bottom:0;">This case study details the development of an automated computer vision intelligence framework designed for high-security facilities and public traffic management. Utilizing <strong>YOLOv8, YOLOv11, and YOLOv12</strong> coupled with OpenCV, the system achieves real-time detection of lethal weapons (firearms, rods, hammers) and rider safety compliance (motorcycle helmet detection) on continuous live CCTV streams.</p>
+    </div>
+
+    <h2>1. The Problem Domain</h2>
+    <p>Manual monitoring of surveillance feeds across industrial complexes, public infrastructure, and urban traffic is inherently prone to human fatigue and latency. In high-risk security scenarios, delayed threat discovery leads to critical response windows being lost. Similarly, traffic enforcement agencies require continuous, non-intrusive monitoring to flag helmet compliance violations dynamically without impeding traffic flow.</p>
+
+    <h2>2. System Architecture & Model Selection</h2>
+    <p>To eliminate latency bottlenecks while preserving detection confidence, the pipeline was architected around light-weight deep learning backbones:</p>
     <ul>
-        <li><strong>Dataset Engineering:</strong> Curated and annotated specialized datasets with multi-angle camera perspectives.</li>
-        <li><strong>Inference Optimization:</strong> Applied TensorRT and frame-skipping logic to preserve smooth frame rates during active detection.</li>
-        <li><strong>Alert Pipeline:</strong> Integrated immediate spatial bounding-box renders alongside web hook alerts upon threat confidence crossing designated thresholds.</li>
+        <li><span class="badge danger">Threat Detection</span> <strong>Multi-Class Weapon Pipeline:</strong> Models trained on customized datasets containing firearms, handguns, hammers, and blunt objects. Optimized non-maximum suppression (NMS) thresholds ensure immediate bounding box triggers even under partial occlusion.</li>
+        <li><span class="badge success">PPE Compliance</span> <strong>Motorcycle Helmet Enforcement:</strong> Real-time spatial tracking separating compliant riders wearing helmets from non-compliant violators using dynamic red-line bounding alerts on incoming video feeds.</li>
+        <li><strong>Stream Optimization:</strong> Implemented frame-skipping logic and threaded buffer management in OpenCV to process high-definition RTSP streams without dropping frame rates on local edge hardware.</li>
     </ul>
 
-    <h2>3. Deployment Considerations</h2>
-    <p>Ensuring operational reliability meant balancing frame resolution against computational load on edge hardware. Future iterations incorporate digital twin representations for active spatial positioning inside monitored facilities.</p>
+    <h2>3. Key Business & Industrial Benefits</h2>
+    <ul>
+        <li><strong>Sub-Second Threat Escalation:</strong> Reduces mean-time-to-detect (MTTD) for physical security breaches from minutes to real-time milliseconds.</li>
+        <li><strong>Automated Traffic Enforcement:</strong> Enables automated logging of traffic violations without deploying physical checkpoint personnel.</li>
+        <li><strong>Scalable Edge Integration:</strong> Designed for low-power edge computing devices (NVIDIA Jetson, Apple Silicon), reducing cloud bandwidth overhead.</li>
+    </ul>
+
+    <h2>4. Future Roadmap & Digital Twin Integration</h2>
+    <p>The next phase of this project incorporates <strong>Digital Twin frameworks</strong>. By translating spatial bounding box coordinates into 3D facility models, security operators can visualize threat vectors in interactive digital environments with automated network dispatch triggers.</p>
+
 </body>
 </html>
