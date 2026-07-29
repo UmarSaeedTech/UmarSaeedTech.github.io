@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Eye Case Study | Umar Saeed</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { background: #0b1120; color: #f8fafc; font-family: 'Inter', sans-serif; padding: 40px 10%; line-height: 1.8; max-width: 800px; margin: 0 auto; }
+        a { color: #38bdf8; text-decoration: none; font-weight: 600; }
+        h1 { font-size: 2.2rem; color: #38bdf8; margin-bottom: 10px; }
+        .meta { color: #94a3b8; font-size: 0.9rem; margin-bottom: 30px; border-bottom: 1px solid #334155; padding-bottom: 15px; }
+        h2 { color: #f8fafc; margin-top: 30px; margin-bottom: 10px; }
+        p { color: #94a3b8; margin-bottom: 20px; }
+        ul { color: #94a3b8; margin-left: 20px; margin-bottom: 20px; }
+        li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <a href="index.html#blog">&larr; Back to Portfolio</a>
+    <h1 style="margin-top: 20px;">Building Real-Time Autonomous Surveillance: Firearm & Threat Detection with YOLOv12</h1>
+    <div class="meta">Published by Umar Saeed • Computer Vision & Real-Time AI Specialist</div>
+
+    <h2>1. Executive Summary</h2>
+    <p>Automated threat monitoring requires high recall and sub-second detection latency across concurrent CCTV channels. The Smart Eye system integrates custom-trained YOLO architectures with OpenCV processing pipelines to detect firearms and industrial hazards in real time.</p>
+
+    <h2>2. Technical Architecture & Engineering</h2>
+    <ul>
+        <li><strong>Dataset Engineering:</strong> Curated and annotated specialized datasets with multi-angle camera perspectives.</li>
+        <li><strong>Inference Optimization:</strong> Applied TensorRT and frame-skipping logic to preserve smooth frame rates during active detection.</li>
+        <li><strong>Alert Pipeline:</strong> Integrated immediate spatial bounding-box renders alongside web hook alerts upon threat confidence crossing designated thresholds.</li>
+    </ul>
+
+    <h2>3. Deployment Considerations</h2>
+    <p>Ensuring operational reliability meant balancing frame resolution against computational load on edge hardware. Future iterations incorporate digital twin representations for active spatial positioning inside monitored facilities.</p>
+</body>
+</html>
