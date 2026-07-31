@@ -28,14 +28,14 @@
         
         .hero { padding: 80px 10% 40px; text-align: center; max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
         .profile-img { 
-    width: 145px; 
-    height: 145px; 
-    border-radius: 50%; 
-    object-fit: cover; 
-    border: 3px solid #e2e8f0; 
-    margin-bottom: 20px; 
-    box-shadow: 0 0 25px rgba(226, 232, 240, 0.25); 
-}
+            width: 145px; 
+            height: 145px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 3px solid #e2e8f0; 
+            margin-bottom: 20px; 
+            box-shadow: 0 0 25px rgba(226, 232, 240, 0.25); 
+        }
         .hero h1 { font-size: 2.9rem; margin-bottom: 12px; font-weight: 800; }
         .hero h1 span { color: var(--accent-color); }
         .hero .subtitle { color: var(--accent-color); font-size: 1.2rem; font-weight: 600; margin-bottom: 15px; letter-spacing: 0.2px; }
@@ -135,8 +135,7 @@
             <a href="#skills">Skills</a>
             <a href="#education">Education</a>
             <a href="#certifications">Certifications</a>
-        
-   
+        </div>
     </nav>
 
     <header class="hero" id="about">
@@ -157,7 +156,8 @@
             <div class="grid">
                 
                 <!-- 1. Helmet Compliance -->
-                <div class="single-img-container" style="padding: 0; background: none;">
+                <div class="card">
+                    <div class="single-img-container" style="padding: 0; background: none;">
                         <video autoplay loop muted playsinline width="100%" height="100%" style="border-radius: 10px; object-fit: cover;">
                             <source src="helmet_video.mp4" type="video/mp4">
                             Your browser does not support video playback.
@@ -178,11 +178,11 @@
                 <!-- 2. Weapon & Threat Detection -->
                 <div class="card">
                     <div class="single-img-container" style="padding: 0; background: none;">
-                    <video autoplay loop muted playsinline width="100%" height="100%" style="border-radius: 10px; object-fit: cover;">
-                        <source src="weapon_video.mp4" type="video/mp4">
-                        Your browser does not support video playback.
-                    </video>
-                </div>
+                        <video autoplay loop muted playsinline width="100%" height="100%" style="border-radius: 10px; object-fit: cover;">
+                            <source src="weapon_video.mp4" type="video/mp4">
+                            Your browser does not support video playback.
+                        </video>
+                    </div>
                     <h3>Multi-Class Threat & Weapon Detection</h3>
                     <div class="meta">NCAI 'Smart Eye' Autonomous Threat Pipeline</div>
                     <p>Engineered YOLOv8/v11/v12 detection models identifying firearms, hammers, and lethal rods with low latency and automated alarm triggers on CCTV feeds.</p>
@@ -239,8 +239,7 @@
             </div>
         </section>
 
-        <!-- Premium Interactive Skills Graph -->
-         <!-- Blog / Technical Insights Section -->
+        <!-- Blog / Technical Insights Section -->
         <section id="blog">
             <h2 class="section-title">Technical Insights & Case Studies</h2>
             <p style="color: var(--text-muted); margin-bottom: 25px;">In-depth breakdowns of computer vision architectures, real-time safety systems, and AI engineering practices.</p>
@@ -278,7 +277,8 @@
                 </div>
 
             </div>
-        </section-
+        </section>
+
         <section id="skills">
             <h2 class="section-title">Technical Toolkit & Research Domains</h2>
             <p style="color: var(--text-muted); text-align: center; margin-bottom: 25px; font-size: 0.98rem;">Select a research node to inspect the specific frameworks, languages, and architectures behind my work:</p>
@@ -333,7 +333,7 @@
             </div>
         </section>
 
-      <section id="education">
+        <section id="education">
             <h2 class="section-title">Education</h2>
             <div class="card">
                 <h3>Bachelor of Science in Computer Science (BSCS)</h3>
