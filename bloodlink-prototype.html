@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BloodLink Interactive Prototype</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', Arial, sans-serif; background: #0f172a; color: #f8fafc; display: flex; justify-content: center; padding: 15px; }
+.app-card { background: #ffffff; color: #1e293b; width: 100%; max-width: 380px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); padding: 20px; }
+.header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; }
+.logo { font-weight: 800; color: #e30613; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; }
+.hero-box { background: linear-gradient(135deg, #e30613, #990000); color: white; padding: 18px; border-radius: 14px; margin-bottom: 20px; text-align: center; }
+.hero-box h4 { font-size: 1.1rem; margin-bottom: 5px; }
+.hero-box p { font-size: 0.8rem; opacity: 0.9; }
+.section-label { font-size: 0.85rem; font-weight: 700; color: #64748b; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+.blood-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 20px; }
+.blood-btn { background: #f1f5f9; border: 2px solid #e2e8f0; border-radius: 10px; padding: 10px 0; text-align: center; font-weight: 700; color: #334155; cursor: pointer; transition: all 0.2s; }
+.blood-btn:hover, .blood-btn.active { background: #e30613; color: white; border-color: #e30613; box-shadow: 0 4px 12px rgba(227,6,19,0.3); }
+.submit-btn { width: 100%; background: #e30613; color: white; border: none; padding: 12px; border-radius: 10px; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+.submit-btn:hover { background: #b9000b; }
+.status-msg { display: none; margin-top: 15px; padding: 12px; background: #dcfce7; border: 1px solid #86efac; color: #166534; border-radius: 10px; font-size: 0.85rem; text-align: center; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="app-card">
+    <div class="header">
+        <div class="logo">🩸 BloodLink</div>
+        <span style="font-size: 0.8rem; color: #64748b; font-weight: 600;">📍 Islamabad</span>
+    </div>
+
+    <div class="hero-box">
+        <h4>Need Blood Urgently?</h4>
+        <p>Match instantly with verified donors & blood banks near you.</p>
+    </div>
+
+    <div class="section-label">1. Select Blood Group</div>
+    <div class="blood-grid">
+        <div class="blood-btn" onclick="selectGroup(this)">A+</div>
+        <div class="blood-btn" onclick="selectGroup(this)">A-</div>
+        <div class="blood-btn" onclick="selectGroup(this)">B+</div>
+        <div class="blood-btn" onclick="selectGroup(this)">B-</div>
+        <div class="blood-btn" onclick="selectGroup(this)">O+</div>
+        <div class="blood-btn" onclick="selectGroup(this)">O-</div>
+        <div class="blood-btn" onclick="selectGroup(this)">AB+</div>
+        <div class="blood-btn" onclick="selectGroup(this)">AB-</div>
+    </div>
+
+    <button class="submit-btn" onclick="dispatchRequest()">Dispatch Emergency Request</button>
+
+    <div class="status-msg" id="statusBox">
+        ✅ Emergency Match Dispatched! 3 Donors notified near Fauji Foundation Hospital.
+    </div>
+</div>
+
+<script>
+function selectGroup(el) {
+    document.querySelectorAll('.blood-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+}
+
+function dispatchRequest() {
+    const box = document.getElementById('statusBox');
+    box.style.display = 'block';
+}
+</script>
+
+</body>
+</html>
