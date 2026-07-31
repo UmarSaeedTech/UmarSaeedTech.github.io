@@ -155,7 +155,7 @@
             <h2 class="section-title">Featured Projects</h2>
             <div class="grid">
                 
-                <!-- 1. Helmet Compliance -->
+                <!-- 1. Helmet Compliance (Live Video) -->
                 <div class="card">
                     <div class="single-img-container" style="padding: 0; background: none;">
                         <video autoplay loop muted playsinline width="100%" height="100%" style="border-radius: 10px; object-fit: cover;">
@@ -175,13 +175,17 @@
                     </div>
                 </div>
 
-                <!-- 2. Weapon & Threat Detection -->
+                <!-- 2. Weapon & Threat Detection (Stable Dual Image Version) -->
                 <div class="card">
-                    <div class="single-img-container" style="padding: 0; background: none;">
-                        <video autoplay loop muted playsinline width="100%" height="100%" style="border-radius: 10px; object-fit: cover;">
-                            <source src="weapon_video.mp4" type="video/mp4">
-                            Your browser does not support video playback.
-                        </video>
+                    <div class="dual-img-container">
+                        <div class="dual-img-box">
+                            <img src="before_weapon_demo.jpg" alt="Baseline CCTV Stream">
+                            <span class="img-badge">BASELINE STREAM</span>
+                        </div>
+                        <div class="dual-img-box">
+                            <img src="weapon_demo.jpg" alt="Threat Detected Overlay">
+                            <span class="img-badge danger">THREAT DETECTED</span>
+                        </div>
                     </div>
                     <h3>Multi-Class Threat & Weapon Detection</h3>
                     <div class="meta">NCAI 'Smart Eye' Autonomous Threat Pipeline</div>
