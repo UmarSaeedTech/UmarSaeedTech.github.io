@@ -1,0 +1,10 @@
+# Block weight files from being uploaded to GitHub
+*.pt
+*.pth
+*.onnx
+*.weights
+
+# Block dataset folders and zip files
+/dataset/
+/data/
+*.zip
